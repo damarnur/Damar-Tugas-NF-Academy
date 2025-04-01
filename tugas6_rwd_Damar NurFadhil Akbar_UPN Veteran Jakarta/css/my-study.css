@@ -1,0 +1,30 @@
+body {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 30px;
+}
+
+.table {
+  align-items: center;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+thead {
+  background: #ffab5b;
+}
+
+tbody {
+  text-align: center;
+}
+
+tfoot {
+  text-align: center;
+  background-color: #ffab5b;
+}
