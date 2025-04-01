@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RWD Bootstrap</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="icon" href="favicon.ico" />
+  </head>
+  <body>
+    <!-- header for carousel -->
+    <div class="container-fluid header">
+      <div class="row">
+        <div class="col-md-12">
+          <div id="carouselExampleCaptions" class="carousel slide">
+            <div class="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#carouselExampleCaptions"
+                data-bs-slide-to="0"
+                class="active"
+                aria-current="true"
+                aria-label="Slide 1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleCaptions"
+                data-bs-slide-to="1"
+                aria-label="Slide 2"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleCaptions"
+                data-bs-slide-to="2"
+                aria-label="Slide 3"
+              ></button>
+            </div>
+            <div class="carousel-inner carousel">
+              <div class="carousel-item active">
+                <img
+                  src="../picture/slidebar1.jpg"
+                  class="d-block w-100"
+                  alt="slidebar-test"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="../picture/slidebar2.jpg"
+                  class="d-block w-100"
+                  alt="slidebar-test"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="../picture/slidebar3.jpg"
+                  class="d-block w-100"
+                  alt="slidebar-test"
+                />
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- navbar for home (profile), MyStudy, Gallery, Datatable, and Login -->
+      <div class="row">
+        <div class="col-md-12">
+          <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid" id="navbar">
+              <img src="/picture/logo.svg" alt="logo" width="120px" />
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="navbar-list">
+                  <li class="nav-item">
+                    <a
+                      class="nav-link active"
+                      aria-current="page"
+                      href="my-profile.html"
+                      target="main-content"
+                      >Home</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link"
+                      href="my-study.html"
+                      target="main-content"
+                      >MyStudy</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link"
+                      href="gallery.html"
+                      target="main-content"
+                      >Gallery</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link"
+                      href="data-tables.html"
+                      target="main-content"
+                      >Datatable</a
+                    >
+                  </li>
+                </ul>
+                <li class="nav-item" id="login-button">
+                  <a class="nav-link" href="login-form.html">Login</a>
+                </li>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+
+      <!-- Content section -->
+      <div class="row content-section">
+        <!-- Sidebar -->
+        <div class="col-md-3 sidebar">
+          <div class="sidebar-content">
+            <h4>Useful Resources</h4>
+            <ul>
+              <li>
+                <a href="https://nfacademy.id/" target="main-content">
+                  <i class="bi bi-link-45deg"></i> NF Academy
+                </a>
+              </li>
+              <li>
+                <a href="https://nurulfikri.ac.id/" target="main-content">
+                  <i class="bi bi-link-45deg"></i> Nurul Fikri
+                </a>
+              </li>
+              <li>
+                <a href="https://getbootstrap.com/" target="main-content">
+                  <i class="bi bi-link-45deg"></i> Bootstrap
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.layoutit-studio.com/"
+                  target="main-content"
+                >
+                  <i class="bi bi-link-45deg"></i> Layoutit
+                </a>
+              </li>
+              <li>
+                <a href="https://colorhunt.co/" target="main-content">
+                  <i class="bi bi-link-45deg"></i> Color Hunt
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- main content -->
+        <div class="col-md-9">
+          <iframe
+            src="main-content.html"
+            id="main-content"
+            frameborder="0"
+            width="100%"
+            scrolling="no"
+            name="main-content"
+          ></iframe>
+        </div>
+      </div>
+
+      <!-- footer -->
+      <div class="row">
+        <div class="col-md-12 footer">
+          <div class="copyright">
+            <img
+              src="picture/upn.webp"
+              alt="logo upn"
+              width="30px"
+              height="30px"
+            />
+            <span>Copyright &copy; Damar NurFadhil Akbar</span>
+          </div>
+          <div class="social-media">
+            <a href="https://www.instagram.com/_dmrnur/"
+              ><i class="bi bi-instagram"></i
+            ></a>
+            <a href="https://www.facebook.com/damar.nurfadhilakbar?locale=id_ID"
+              ><i class="bi bi-facebook"></i
+            ></a>
+            <a href="https://github.com/damarnur"
+              ><i class="bi bi-github"></i
+            ></a>
+            <a href="https://www.linkedin.com/in/damarnur/"
+              ><i class="bi bi-linkedin"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script type="application/javascript">
+      function resizeIFrameToFitContent(iFrame) {
+        iFrame.width = iFrame.contentWindow.document.body.scrollWidth;
+        iFrame.height = iFrame.contentWindow.document.body.scrollHeight;
+      }
+
+      window.addEventListener("DOMContentLoaded", function (e) {
+        let iFrame = document.getElementById("main-content");
+        resizeIFrameToFitContent(iFrame);
+
+        // or, to resize all iframes:
+        let iframes = document.querySelectorAll("iframe");
+        for (let i = 0; i < iframes.length; i++) {
+          resizeIFrameToFitContent(iframes[i]);
+        }
+      });
+    </script>
+    <script type="application/javascript">
+      function resizeIFrameToFitContent(iFrame) {
+        iFrame.width = iFrame.contentWindow.document.body.scrollWidth;
+
+        const contentHeight = iFrame.contentWindow.document.body.scrollHeight;
+        iFrame.height = contentHeight > 500 ? contentHeight : 500;
+
+        if (iFrame.height > 500) {
+          document
+            .getElementById("main-content")
+            .setAttribute("scrolling", "yes");
+        }
+      }
+
+      window.addEventListener("DOMContentLoaded", function (e) {
+        let iFrame = document.getElementById("main-content");
+
+        iFrame.onload = function () {
+          try {
+            resizeIFrameToFitContent(iFrame);
+          } catch (e) {
+            console.log("Could not resize iframe: ", e);
+          }
+        };
+      });
+    </script>
+  </body>
+</html>
