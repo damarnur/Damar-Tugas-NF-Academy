@@ -8,17 +8,27 @@ import Home from "./Home";
 
 export default function App() {
   return (
-    <div>
+    <div className="app-wrapper">
       <Header />
-      <main className="flex-grow 1">
+      <main className="flex-grow-1">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/home" element={<h1>Home</h1>} />
-          <Route path="/book" element={<h1>Book</h1>} />
-          <Route path="/team" element={<h1>Team</h1>} />
-          <Route path="/contact" element={<h1>Contact</h1>} />
+          <Route path="/home" element={<Home />} />
+          <Route
+            path="/book"
+            element={<h1 className="my-5 text-center">Book Collection</h1>}
+          />
+          <Route
+            path="/team"
+            element={<h1 className="my-5 text-center">Our Team</h1>}
+          />
+          <Route
+            path="/contact"
+            element={<h1 className="my-5 text-center">Contact Us</h1>}
+          />
         </Routes>
       </main>
+      <Footer />
     </div>
   );
 }

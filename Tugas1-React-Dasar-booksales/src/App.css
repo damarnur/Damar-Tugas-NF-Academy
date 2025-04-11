@@ -1,41 +1,126 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  text-align: center;
+/* Base styling */
+:root {
+  --primary-color: #4dabf7;
+  --secondary-color: #868e96;
+  --dark-color: #343a40;
+  --light-color: #f8f9fa;
+  --transition: all 0.3s ease;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.6;
+  color: var(--dark-color);
+  background-color: #fff;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0.5em;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--dark-color);
 }
 
+.display-3 {
+  letter-spacing: -0.02em;
+}
+
+.display-5 {
+  letter-spacing: -0.02em;
+}
+
+/* Spacing */
+section {
+  padding: 4rem 0;
+}
+
+/* Card styling */
 .card {
-  padding: 2em;
+  transition: var(--transition);
+  overflow: hidden;
 }
 
-.read-the-docs {
-  color: #888;
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card:hover img {
+  transform: scale(1.03);
+}
+
+.card img {
+  transition: var(--transition);
+}
+
+/* Button styles */
+.btn {
+  font-weight: 500;
+  border-radius: 6px;
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: #3b8ec9;
+  border-color: #3b8ec9;
+}
+
+.btn-outline-primary {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary-color);
+}
+
+/* Link styling */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: #3b8ec9;
+}
+
+/* Form elements */
+.form-control {
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  border: 1px solid #dee2e6;
+}
+
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.25rem rgba(77, 171, 247, 0.25);
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+  .display-3 {
+    font-size: 2.5rem;
+  }
+
+  .display-5 {
+    font-size: 1.8rem;
+  }
 }

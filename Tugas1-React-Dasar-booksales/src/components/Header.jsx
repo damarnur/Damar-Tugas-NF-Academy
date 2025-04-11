@@ -1,50 +1,56 @@
 import { Link } from "react-router-dom";
 export default function Header() {
   return (
-    <header className="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-      <div className="col-md-3 mb-2 mb-md-0">
-        <a
-          href="/"
-          className="d-inline-flex link-body-emphasis text-decoration-none align-items-center"
-        >
-          <i
-            className="fa-solid fa-book fa-2xl"
-            style={{ color: "#74C0FC" }}
-          ></i>
-          <span className="ms-2 fs-4">bookstore</span>
-        </a>
-      </div>
+    <header className="py-4 mb-5">
+      <div className="container">
+        <div className="d-flex flex-wrap align-items-center justify-content-between">
+          <div className="mb-3 mb-md-0">
+            <Link
+              to="/"
+              className="d-inline-flex align-items-center text-decoration-none"
+            >
+              <i
+                className="fa-solid fa-book fa-2xl"
+                style={{ color: "#4dabf7" }}
+              ></i>
+              <span className="ms-3 fs-4 fw-medium">bookstore</span>
+            </Link>
+          </div>
 
-      <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        <li>
-          <Link className="nav-link px-2" to={"/"}>
-            Home
-          </Link>
-        </li>
-        <li>
-          <a href="#" className="nav-link px-2">
-            Book
-          </a>
-        </li>
-        <li>
-          <a href="#" className="nav-link px-2">
-            Team
-          </a>
-        </li>
-        <li>
-          <a href="#" className="nav-link px-2">
-            Contact
-          </a>
-        </li>
-      </ul>
+          <nav className="my-2 my-md-0 me-md-3">
+            <ul className="nav d-flex gap-4 justify-content-center">
+              <li>
+                <Link className="nav-link px-0 text-dark fw-medium" to="/">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link className="nav-link px-0 text-secondary" to="/book">
+                  Book
+                </Link>
+              </li>
+              <li>
+                <Link className="nav-link px-0 text-secondary" to="/team">
+                  Team
+                </Link>
+              </li>
+              <li>
+                <Link className="nav-link px-0 text-secondary" to="/contact">
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </nav>
 
-      <div className="col-md-3 text-end">
-        <button type="button" className="btn btn-outline-primary me-2">
-          Login
-        </button>
-        <button type="button" className="btn btn-primary">
-          Register
-        </button>
+          <div className="d-flex gap-2">
+            <button type="button" className="btn btn-outline-primary px-4">
+              Login
+            </button>
+            <button type="button" className="btn btn-primary px-4">
+              Register
+            </button>
+          </div>
+        </div>
       </div>
     </header>
   );
