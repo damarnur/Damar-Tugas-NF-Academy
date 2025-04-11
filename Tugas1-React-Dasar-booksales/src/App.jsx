@@ -8,6 +8,7 @@ import Home from "./Home";
 import BookPage from "./pages/BookPage";
 import TeamPage from "./pages/TeamPage";
 import TeamMemberDetail from "./pages/TeamMemberDetail";
+import ContactPage from "./pages/ContactPage";
 
 export default function App() {
   return (
@@ -26,10 +27,7 @@ export default function App() {
           />
           <Route path="/team" element={<TeamPage />} />
           <Route path="/team/:id" element={<TeamMemberDetail />} />
-          <Route
-            path="/contact"
-            element={<h1 className="my-5 text-center">Contact Us</h1>}
-          />
+          <Route path="/contact" element={<ContactPage />} />
           <Route
             path="*"
             element={<h1 className="my-5 text-center">Page Not Found</h1>}
