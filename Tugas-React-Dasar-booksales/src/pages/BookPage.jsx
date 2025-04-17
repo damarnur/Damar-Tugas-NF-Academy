@@ -4,10 +4,11 @@ import BookHero from "../components/books/BookHero";
 import BookList from "../components/books/BookList";
 import BookFilter from "../components/books/BookFilter";
 import BookSearch from "../components/books/BookSearch";
-import { booksData } from "../data/books";
+// import { booksData } from "../data/books";
+import books from "../Utils/books.js";
 
 export default function BookPage() {
-  const [filteredBooks, setFilteredBooks] = useState(booksData);
+  const [filteredBooks, setFilteredBooks] = useState(books);
   const [categories, setCategories] = useState([]);
   const [activeCategory, setActiveCategory] = useState("All");
   const [viewMode, setViewMode] = useState("grid");
@@ -19,7 +20,7 @@ export default function BookPage() {
   useEffect(() => {
     const allCategories = [
       "All",
-      ...new Set(booksData.map((book) => book.category)),
+      ...new Set(books.map((book) => book.year.toString())),
     ];
     setCategories(allCategories);
 
@@ -39,11 +40,11 @@ export default function BookPage() {
 
   // Apply filters based on category and search
   const applyFilters = (category, searchQuery = "") => {
-    let filtered = [...booksData];
+    let filtered = [...books];
 
-    // Filter by category
+    // Filter by category (using year as category)
     if (category && category !== "All") {
-      filtered = filtered.filter((book) => book.category === category);
+      filtered = filtered.filter((book) => book.year.toString() === category);
     }
 
     // Filter by search term

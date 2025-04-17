@@ -17,8 +17,8 @@ export default function BookSearch({
     <div className="mb-4">
       <div className="d-flex flex-column flex-md-row align-items-md-center justify-content-between mb-4">
         <div className="mb-3 mb-md-0">
-          <h5 className="fw-semibold mb-1">Browse Books</h5>
-          <p className="text-secondary m-0">{totalBooks} books found</p>
+          <h5 className="fw-semibold mb-1">Katalog Buku</h5>
+          <p className="text-secondary m-0">{totalBooks} Buku Ditemukan</p>
         </div>
 
         <div className="d-flex gap-2 align-items-center">
@@ -46,17 +46,6 @@ export default function BookSearch({
               <i className="fa-solid fa-list me-1"></i> List
             </button>
           </div>
-
-          <select
-            className="form-select form-select-sm"
-            style={{ width: "auto" }}
-          >
-            <option>Sort by: Featured</option>
-            <option>Price: Low to High</option>
-            <option>Price: High to Low</option>
-            <option>Rating: High to Low</option>
-            <option>Newest First</option>
-          </select>
         </div>
       </div>
 
@@ -64,7 +53,7 @@ export default function BookSearch({
         <input
           type="search"
           className="form-control form-control-lg ps-4 rounded-pill"
-          placeholder="Search by title, author or keyword..."
+          placeholder="Cari Berdasarkan judul, penulis, atau kata kunci..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
@@ -76,21 +65,6 @@ export default function BookSearch({
           <i className="fa-solid fa-search"></i>
         </button>
       </form>
-
-      <div className="d-flex flex-wrap gap-2 mb-4">
-        <span className="fw-medium me-2">Popular:</span>
-        {["Fiction", "Business", "Self-Help", "Fantasy", "Biography"].map(
-          (tag) => (
-            <button
-              key={tag}
-              className="btn btn-sm btn-outline-secondary rounded-pill"
-              onClick={() => onSearch(tag)}
-            >
-              {tag}
-            </button>
-          )
-        )}
-      </div>
     </div>
   );
 }
