@@ -1,10 +1,12 @@
+import { Link } from "react-router-dom";
+
 export default function Hero() {
   return (
     <>
       <section className="bg-white dark:bg-gray-900">
         <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
-          <a
-            href="#"
+          <Link
+            to={"#"}
             className="inline-flex justify-between items-center py-1 px-1 pr-4 mb-7 text-sm text-gray-700 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700"
             role="alert"
           >
@@ -26,7 +28,7 @@ export default function Hero() {
                 clipRule="evenodd"
               ></path>
             </svg>
-          </a>
+          </Link>
           <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
             We invest in the world’s potential
           </h1>
@@ -40,8 +42,8 @@ export default function Hero() {
               FEATURED IN
             </span>
             <div className="flex flex-wrap justify-center items-center mt-8 text-gray-500 sm:justify-between">
-              <a
-                href="#"
+              <Link
+                to={"#"}
                 className="mr-5 mb-5 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400"
               >
                 <svg
@@ -87,9 +89,9 @@ export default function Hero() {
                     fill="currentColor"
                   />
                 </svg>
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                to={"#"}
                 className="mr-5 mb-5 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400"
               >
                 <svg
@@ -111,9 +113,9 @@ export default function Hero() {
                     fill="currentColor"
                   />
                 </svg>
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                to={"#"}
                 className="mr-5 mb-5 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400"
               >
                 <svg
@@ -139,7 +141,7 @@ export default function Hero() {
                     fill="currentColor"
                   />
                 </svg>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

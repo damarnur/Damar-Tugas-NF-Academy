@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function AdminTransactions() {
   return (
     <>
@@ -119,29 +121,29 @@ export default function AdminTransactions() {
                         aria-labelledby="apple-imac-27-dropdown-button"
                       >
                         <li>
-                          <a
-                            href="#"
+                          <Link
+                            to={"#"}
                             className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                           >
                             Show
-                          </a>
+                          </Link>
                         </li>
                         <li>
-                          <a
-                            href="#"
+                          <Link
+                            to={"#"}
                             className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                           >
                             Edit
-                          </a>
+                          </Link>
                         </li>
                       </ul>
                       <div className="py-1">
-                        <a
-                          href="#"
+                        <Link
+                          to={"#"}
                           className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                         >
                           Delete
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </td>
@@ -183,29 +185,29 @@ export default function AdminTransactions() {
                         aria-labelledby="apple-imac-20-dropdown-button"
                       >
                         <li>
-                          <a
-                            href="#"
+                          <Link
+                            to={"#"}
                             className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                           >
                             Show
-                          </a>
+                          </Link>
                         </li>
                         <li>
-                          <a
-                            href="#"
+                          <Link
+                            to={"#"}
                             className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                           >
                             Edit
-                          </a>
+                          </Link>
                         </li>
                       </ul>
                       <div className="py-1">
-                        <a
-                          href="#"
+                        <Link
+                          to={"#"}
                           className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                         >
                           Delete
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </td>
@@ -247,29 +249,29 @@ export default function AdminTransactions() {
                         aria-labelledby="apple-iphone-14-dropdown-button"
                       >
                         <li>
-                          <a
-                            href="#"
+                          <Link
+                            to={"#"}
                             className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                           >
                             Show
-                          </a>
+                          </Link>
                         </li>
                         <li>
-                          <a
-                            href="#"
+                          <Link
+                            to={"#"}
                             className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                           >
                             Edit
-                          </a>
+                          </Link>
                         </li>
                       </ul>
                       <div className="py-1">
-                        <a
-                          href="#"
+                        <Link
+                          to={"#"}
                           className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                         >
                           Delete
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </td>
@@ -311,29 +313,29 @@ export default function AdminTransactions() {
                         aria-labelledby="apple-ipad-air-dropdown-button"
                       >
                         <li>
-                          <a
-                            href="#"
+                          <Link
+                            to={"#"}
                             className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                           >
                             Show
-                          </a>
+                          </Link>
                         </li>
                         <li>
-                          <a
-                            href="#"
+                          <Link
+                            to={"#"}
                             className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                           >
                             Edit
-                          </a>
+                          </Link>
                         </li>
                       </ul>
                       <div className="py-1">
-                        <a
-                          href="#"
+                        <Link
+                          to={"#"}
                           className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                         >
                           Delete
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </td>
@@ -375,29 +377,29 @@ export default function AdminTransactions() {
                         aria-labelledby="xbox-series-s-dropdown-button"
                       >
                         <li>
-                          <a
-                            href="#"
+                          <Link
+                            to={"#"}
                             className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                           >
                             Show
-                          </a>
+                          </Link>
                         </li>
                         <li>
-                          <a
-                            href="#"
+                          <Link
+                            to={"#"}
                             className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                           >
                             Edit
-                          </a>
+                          </Link>
                         </li>
                       </ul>
                       <div className="py-1">
-                        <a
-                          href="#"
+                        <Link
+                          to={"#"}
                           className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                         >
                           Delete
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </td>
@@ -439,29 +441,29 @@ export default function AdminTransactions() {
                         aria-labelledby="playstation-5-dropdown-button"
                       >
                         <li>
-                          <a
-                            href="#"
+                          <Link
+                            to={"#"}
                             className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                           >
                             Show
-                          </a>
+                          </Link>
                         </li>
                         <li>
-                          <a
-                            href="#"
+                          <Link
+                            to={"#"}
                             className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                           >
                             Edit
-                          </a>
+                          </Link>
                         </li>
                       </ul>
                       <div className="py-1">
-                        <a
-                          href="#"
+                        <Link
+                          to={"#"}
                           className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                         >
                           Delete
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </td>
@@ -503,29 +505,29 @@ export default function AdminTransactions() {
                         aria-labelledby="xbox-series-x-dropdown-button"
                       >
                         <li>
-                          <a
-                            href="#"
+                          <Link
+                            to={"#"}
                             className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                           >
                             Show
-                          </a>
+                          </Link>
                         </li>
                         <li>
-                          <a
-                            href="#"
+                          <Link
+                            to={"#"}
                             className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                           >
                             Edit
-                          </a>
+                          </Link>
                         </li>
                       </ul>
                       <div className="py-1">
-                        <a
-                          href="#"
+                        <Link
+                          to={"#"}
                           className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                         >
                           Delete
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </td>
@@ -567,29 +569,29 @@ export default function AdminTransactions() {
                         aria-labelledby="apple-watch-se-dropdown-button"
                       >
                         <li>
-                          <a
-                            href="#"
+                          <Link
+                            to={"#"}
                             className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                           >
                             Show
-                          </a>
+                          </Link>
                         </li>
                         <li>
-                          <a
-                            href="#"
+                          <Link
+                            to={"#"}
                             className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                           >
                             Edit
-                          </a>
+                          </Link>
                         </li>
                       </ul>
                       <div className="py-1">
-                        <a
-                          href="#"
+                        <Link
+                          to={"#"}
                           className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                         >
                           Delete
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </td>
@@ -631,29 +633,29 @@ export default function AdminTransactions() {
                         aria-labelledby="nikon-d850-dropdown-button"
                       >
                         <li>
-                          <a
-                            href="#"
+                          <Link
+                            to={"#"}
                             className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                           >
                             Show
-                          </a>
+                          </Link>
                         </li>
                         <li>
-                          <a
-                            href="#"
+                          <Link
+                            to={"#"}
                             className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                           >
                             Edit
-                          </a>
+                          </Link>
                         </li>
                       </ul>
                       <div className="py-1">
-                        <a
-                          href="#"
+                        <Link
+                          to={"#"}
                           className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                         >
                           Delete
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </td>
@@ -695,29 +697,29 @@ export default function AdminTransactions() {
                         aria-labelledby="benq-ex2710q-dropdown-button"
                       >
                         <li>
-                          <a
-                            href="#"
+                          <Link
+                            to={"#"}
                             className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                           >
                             Show
-                          </a>
+                          </Link>
                         </li>
                         <li>
-                          <a
-                            href="#"
+                          <Link
+                            to={"#"}
                             className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                           >
                             Edit
-                          </a>
+                          </Link>
                         </li>
                       </ul>
                       <div className="py-1">
-                        <a
-                          href="#"
+                        <Link
+                          to={"#"}
                           className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                         >
                           Delete
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </td>
@@ -741,8 +743,8 @@ export default function AdminTransactions() {
             </span>
             <ul className="inline-flex items-stretch -space-x-px">
               <li>
-                <a
-                  href="#"
+                <Link
+                  to={"#"}
                   className="flex items-center justify-center h-full py-1.5 px-3 ml-0 text-gray-500 bg-white rounded-l-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
                 >
                   <span className="sr-only">Previous</span>
@@ -759,52 +761,52 @@ export default function AdminTransactions() {
                       clipRule="evenodd"
                     />
                   </svg>
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  to={"#"}
                   className="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
                 >
                   1
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  to={"#"}
                   className="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
                 >
                   2
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  to={"#"}
                   aria-current="page"
                   className="flex items-center justify-center text-sm z-10 py-2 px-3 leading-tight text-indigo-600 bg-indigo-50 border border-indigo-300 hover:bg-indigo-100 hover:text-indigo-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white"
                 >
                   3
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  to={"#"}
                   className="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
                 >
                   ...
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  to={"#"}
                   className="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
                 >
                   100
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  to={"#"}
                   className="flex items-center justify-center h-full py-1.5 px-3 leading-tight text-gray-500 bg-white rounded-r-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
                 >
                   <span className="sr-only">Next</span>
@@ -821,7 +823,7 @@ export default function AdminTransactions() {
                       clipRule="evenodd"
                     />
                   </svg>
-                </a>
+                </Link>
               </li>
             </ul>
           </nav>

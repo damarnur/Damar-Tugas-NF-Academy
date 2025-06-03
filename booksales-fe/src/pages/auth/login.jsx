@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Login() {
   return (
     <>
@@ -57,12 +59,12 @@ export default function Login() {
                       className="font-light text-gray-500 dark:text-gray-300"
                     >
                       I accept the{" "}
-                      <a
+                      <Link
                         className="font-medium text-indigo-600 hover:underline dark:text-indigo-500"
-                        href="#"
+                        to={"#"}
                       >
                         Terms and Conditions
-                      </a>
+                      </Link>
                     </label>
                   </div>
                 </div>
@@ -74,12 +76,12 @@ export default function Login() {
                 </button>
                 <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                   Don’t have an account yet?{" "}
-                  <a
-                    href="register"
+                  <Link
+                    to={"/register"}
                     className="font-medium text-indigo-600 hover:underline dark:text-indigo-500"
                   >
                     Sign up
-                  </a>
+                  </Link>
                 </p>
               </form>
             </div>

@@ -1,32 +1,52 @@
-import { useState } from "react";
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./pages/public";
+import PublicLayout from "./layouts/public";
+import Books from "./pages/public/books";
+import Login from "./pages/auth/login";
+import Register from "./pages/auth/register";
+import AdminLayout from "./layouts/admin";
+import Dashboard from "./pages/admin";
+import AdminBooks from "./pages/admin/books";
+import BookCreate from "./pages/admin/books/create";
+import AdminGenres from "./pages/admin/genres";
+import GenreCreate from "./pages/admin/genres/create";
+import AdminAuthors from "./pages/admin/authors";
+import AuthorCreate from "./pages/admin/authors/create";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <BrowserRouter>
+        <Routes>
+          {/* Public */}
+          <Route element={<PublicLayout />}>
+            <Route index element={<Home />} />
+            <Route path="books" element={<Books />} />
+          </Route>
+
+          {/* Auth */}
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
+
+          {/* Admin */}
+          <Route path="admin" element={<AdminLayout />}>
+            <Route index element={<Dashboard />} />
+
+            <Route path="books">
+              <Route index element={<AdminBooks />} />
+              <Route path="create" element={<BookCreate />} />
+            </Route>
+            <Route path="genres">
+              <Route index element={<AdminGenres />} />
+              <Route path="create" element={<GenreCreate />} />
+            </Route>
+            <Route path="authors">
+              <Route index element={<AdminAuthors />} />
+              <Route path="create" element={<AuthorCreate />} />
+            </Route>
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

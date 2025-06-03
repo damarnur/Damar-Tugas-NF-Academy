@@ -3,11 +3,11 @@ import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 
 export default function PublicLayout() {
-    return (
-      <>
-        <Navbar />
-        <Outlet />
-        <Footer />
-      </>
-    )
+  return (
+    <>
+      <Navbar />
+      <Outlet />
+      <Footer />
+    </>
+  );
 }

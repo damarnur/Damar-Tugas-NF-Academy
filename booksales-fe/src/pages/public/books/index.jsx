@@ -1,39 +1,14 @@
-import { useEffect, useState } from "react";
-import { getBooks } from "../../../_services/books";
-import { getGenres } from "../../../_services/genres";
+import { Link } from "react-router-dom";
 
 export default function Books() {
-  const [books, setBooks] = useState([]);
-  const [genres, setGenres] = useState([]);
-  
-  useEffect(() => {
-    const fetchData = async () => {
-      // kode akan ditunggu sampai selesai semua, lalu memperbarui state
-      const [booksData, genresData] = await Promise.all([
-        getBooks(),
-        getGenres(),
-      ]);
-
-      setBooks(booksData);
-      setGenres(genresData);
-    };
-
-    fetchData();
-  }, []);
-
-  console.log(books);
-  
-  
-
   return (
     <>
       <section className="bg-gray-50 py-8 antialiased dark:bg-gray-900 md:py-12">
         <div className="mx-auto max-w-screen-xl px-4 2xl:px-0">
-
           <div className="mb-4 grid gap-4 sm:grid-cols-2 md:mb-8 lg:grid-cols-3 xl:grid-cols-4">
             <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
               <div className="h-56 w-full">
-                <a href="#">
+                <Link to={"#"}>
                   <img
                     className="mx-auto h-full dark:hidden"
                     src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-front.svg"
@@ -44,15 +19,15 @@ export default function Books() {
                     src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-front-dark.svg"
                     alt=""
                   />
-                </a>
+                </Link>
               </div>
               <div className="pt-6">
-                <a
-                  href="#"
+                <Link
+                  to={"#"}
                   className="text-lg font-semibold leading-tight text-gray-900 hover:underline dark:text-white"
                 >
                   Apple iMac 27", 1TB HDD, Retina 5K Display, M3 Max
-                </a>
+                </Link>
 
                 <ul className="mt-2 flex items-center gap-4">
                   <li className="flex items-center gap-2">
@@ -130,7 +105,7 @@ export default function Books() {
             </div>
             <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
               <div className="h-56 w-full">
-                <a href="#">
+                <Link to={"#"}>
                   <img
                     className="mx-auto h-full dark:hidden"
                     src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/iphone-light.svg"
@@ -141,16 +116,16 @@ export default function Books() {
                     src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/iphone-dark.svg"
                     alt=""
                   />
-                </a>
+                </Link>
               </div>
 
               <div className="pt-6">
-                <a
-                  href="#"
+                <Link
+                  to={"#"}
                   className="text-lg font-semibold leading-tight text-gray-900 hover:underline dark:text-white"
                 >
                   Apple iPhone 15 Pro Max, 256GB, Blue Titanium
-                </a>
+                </Link>
 
                 <ul className="mt-2 flex items-center gap-4">
                   <li className="flex items-center gap-2">
@@ -230,7 +205,7 @@ export default function Books() {
             </div>
             <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
               <div className="h-56 w-full">
-                <a href="#">
+                <Link to={"#"}>
                   <img
                     className="mx-auto h-full dark:hidden"
                     src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/ipad-light.svg"
@@ -241,16 +216,16 @@ export default function Books() {
                     src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/ipad-dark.svg"
                     alt=""
                   />
-                </a>
+                </Link>
               </div>
 
               <div className="pt-6">
-                <a
-                  href="#"
+                <Link
+                  to={"#"}
                   className="text-lg font-semibold leading-tight text-gray-900 hover:underline dark:text-white"
                 >
                   iPad Pro 13-Inch (M4): XDR Display, 512GB
-                </a>
+                </Link>
 
                 <ul className="mt-2 flex items-center gap-4">
                   <li className="flex items-center gap-2">
@@ -328,7 +303,7 @@ export default function Books() {
             </div>
             <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
               <div className="h-56 w-full">
-                <a href="#">
+                <Link to={"#"}>
                   <img
                     className="mx-auto h-full dark:hidden"
                     src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/ps5-light.svg"
@@ -339,16 +314,16 @@ export default function Books() {
                     src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/ps5-dark.svg"
                     alt=""
                   />
-                </a>
+                </Link>
               </div>
 
               <div className="pt-6">
-                <a
-                  href="#"
+                <Link
+                  to={"#"}
                   className="text-lg font-semibold leading-tight text-gray-900 hover:underline dark:text-white"
                 >
                   PlayStation®5 Console – 1TB, PRO Controller
-                </a>
+                </Link>
 
                 <ul className="mt-2 flex items-center gap-4">
                   <li className="flex items-center gap-2">
@@ -424,8 +399,6 @@ export default function Books() {
                 </div>
               </div>
             </div>
-            
-            
           </div>
           <div className="w-full text-center">
             <button
