@@ -3,7 +3,6 @@ import { showGenre, updateGenre } from "../../../_services/genres";
 import { useNavigate, useParams } from "react-router-dom";
 
 export default function GenreCreate() {
-  //   const [genres, setGenres] = useState([]);
   const { id } = useParams();
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -13,13 +12,8 @@ export default function GenreCreate() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const [genresData] = await Promise.all([
-        // getGenres(),
-        showGenre(id),
-      ]);
+      const [genresData] = await Promise.all([showGenre(id)]);
 
-      //   setGenres(genresData);
-      //   setAuthors(authorsData);
       setFormData({
         name: genresData.name,
         description: genresData.description,

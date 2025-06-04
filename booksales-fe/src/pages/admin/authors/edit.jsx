@@ -42,31 +42,6 @@ export default function AuthorEdit() {
     }
   };
 
-  //   const handleSubmit = async (e) => {
-  //     e.preventDefault();
-  //     try {
-  //       const payload = new FormData();
-  //       payload.append("name", formData.name);
-  //       payload.append("photo", formData.photo);
-  //       payload.append("bio", formData.bio);
-
-  //       console.log("Sending payload:");
-  //       for (let [key, value] of payload.entries()) {
-  //         console.log(key, value);
-  //       }
-
-  //       await createAuthor(payload);
-  //       navigate("/admin/authors");
-  //     } catch (error) {
-  //       console.log("Full error object:", error);
-  //       console.log("Error response:", error.response?.data);
-  //       alert(
-  //         "Error Creating Author: " +
-  //           (error.response?.data?.message || error.message)
-  //       );
-  //     }
-  //   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {

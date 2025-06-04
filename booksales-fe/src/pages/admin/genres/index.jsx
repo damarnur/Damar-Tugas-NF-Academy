@@ -7,7 +7,6 @@ export default function AdminGenres() {
 
   const [openDropdownId, setOpenDropdownId] = useState(null);
 
-  // mengambil data
   useEffect(() => {
     const fetchData = async () => {
       const [genresData] = await Promise.all([getGenres()]);

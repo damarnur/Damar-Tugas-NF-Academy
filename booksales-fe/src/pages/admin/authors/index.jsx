@@ -7,7 +7,6 @@ export default function AdminAuthors() {
 
   const [openDropdownId, setOpenDropdownId] = useState(null);
 
-  // mengambil data
   useEffect(() => {
     const fetchData = async () => {
       const [authorsData] = await Promise.all([getAuthors()]);
