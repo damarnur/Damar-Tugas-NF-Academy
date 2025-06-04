@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getBooks } from "../../../_services/books";
+import { deleteBook, getBooks } from "../../../_services/books";
 import { getGenres } from "../../../_services/genres";
 import { Link } from "react-router-dom";
 import { getAuthors } from "../../../_services/authors";
@@ -41,10 +41,21 @@ export default function AdminBooks() {
     setOpenDropdownId(openDropdownId === id ? null : id);
   };
 
+  const handleDelete = async (id) => {
+    const confirmDelete = window.confirm(
+      "Are you sure want to delete this book?"
+    );
+
+    if (confirmDelete) {
+      await deleteBook(id);
+      setBooks(books.filter((book) => book.id !== id));
+    }
+  };
+
   return (
     <>
       {/* bisa atur responsive di section */}
-      <section className="bg-gray-50 dark:bg-gray-900 p-28">
+      <section className="bg-gray-50 dark:bg-gray-900 p-32">
         <div className="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden">
           <div className="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
             <div className="w-full md:w-1/2">
@@ -184,7 +195,7 @@ export default function AdminBooks() {
                             </ul>
                             <div className="py-1">
                               <button
-                                onClick={""}
+                                onClick={() => handleDelete(book.id)}
                                 className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                               >
                                 Delete

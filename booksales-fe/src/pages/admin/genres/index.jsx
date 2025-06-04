@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getGenres } from "../../../_services/genres";
+import { deleteGenre, getGenres } from "../../../_services/genres";
 import { Link } from "react-router-dom";
 
 export default function AdminGenres() {
@@ -22,10 +22,21 @@ export default function AdminGenres() {
     setOpenDropdownId(openDropdownId === id ? null : id);
   };
 
+  const handleDelete = async (id) => {
+    const confirmDelete = window.confirm(
+      "Are you sure want to delete this genre?"
+    );
+
+    if (confirmDelete) {
+      await deleteGenre(id);
+      setGenres(genres.filter((genre) => genre.id !== id));
+    }
+  };
+
   return (
     <>
       {/* bisa atur responsive di section */}
-      <section className="bg-gray-50 dark:bg-gray-900 p-28">
+      <section className="bg-gray-50 dark:bg-gray-900 p-32">
         <div className="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden">
           <div className="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
             <div className="w-full md:w-1/2">
@@ -143,7 +154,7 @@ export default function AdminGenres() {
                             >
                               <li>
                                 <Link
-                                  to={"/admin/books/edit/" + genre.id}
+                                  to={"/admin/genres/edit/" + genre.id}
                                   className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                                 >
                                   Edit
@@ -152,7 +163,7 @@ export default function AdminGenres() {
                             </ul>
                             <div className="py-1">
                               <button
-                                onClick={""}
+                                onClick={() => handleDelete(genre.id)}
                                 className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                               >
                                 Delete
