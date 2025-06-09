@@ -1,6 +1,60 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { logout, useDecodeToken } from "../_services/auth";
 
 export default function AdminLayout() {
+  const navigate = useNavigate();
+  const token = localStorage.getItem("accessToken");
+  const userInfo = JSON.parse(localStorage.getItem("user"));
+  const decodedData = useDecodeToken(token);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  useEffect(() => {
+    if (!token || !decodedData || !decodedData.success) {
+      navigate("/login");
+    }
+
+    const role = userInfo.role;
+    if (role !== "admin" || !role) {
+      navigate("/");
+    }
+  }, [token, decodedData, navigate]);
+
+  const handleLogout = async () => {
+    if (token) {
+      await logout({ token });
+      localStorage.removeItem("user");
+    }
+    navigate("/login");
+  };
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  // Close dropdown when clicking outside
+  const handleClickOutside = (e) => {
+    if (
+      !e.target.closest("#user-menu-button") &&
+      !e.target.closest("#dropdown")
+    ) {
+      setIsDropdownOpen(false);
+    }
+  };
+
+  // Add event listener for clicking outside
+  React.useEffect(() => {
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
+
   return (
     <>
       <div className="antialiased bg-gray-50 dark:bg-gray-900">
@@ -8,9 +62,7 @@ export default function AdminLayout() {
           <div className="flex flex-wrap justify-between items-center">
             <div className="flex justify-start items-center">
               <button
-                data-drawer-target="drawer-navigation"
-                data-drawer-toggle="drawer-navigation"
-                aria-controls="drawer-navigation"
+                onClick={toggleSidebar}
                 className="p-2 mr-2 text-gray-600 rounded-lg cursor-pointer md:hidden hover:text-gray-900 hover:bg-gray-100 focus:bg-gray-100 dark:focus:bg-gray-700 focus:ring-2 focus:ring-gray-100 dark:focus:ring-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
               >
                 <svg
@@ -23,19 +75,6 @@ export default function AdminLayout() {
                   <path
                     fillRule="evenodd"
                     d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                    clipRule="evenodd"
-                  ></path>
-                </svg>
-                <svg
-                  aria-hidden="true"
-                  className="hidden w-6 h-6"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
                     clipRule="evenodd"
                   ></path>
                 </svg>
@@ -58,8 +97,6 @@ export default function AdminLayout() {
             <div className="flex items-center lg:order-2">
               <button
                 type="button"
-                data-drawer-toggle="drawer-navigation"
-                aria-controls="drawer-navigation"
                 className="p-2 mr-1 text-gray-500 rounded-lg md:hidden hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
               >
                 <span className="sr-only">Toggle search</span>
@@ -78,55 +115,63 @@ export default function AdminLayout() {
                 </svg>
               </button>
 
-              <button
-                type="button"
-                className="flex mx-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
-                id="user-menu-button"
-                aria-expanded="false"
-                data-dropdown-toggle="dropdown"
-              >
-                <span className="sr-only">Open user menu</span>
-                <img
-                  className="w-8 h-8 rounded-full"
-                  src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gough.png"
-                  alt="user photo"
-                />
-              </button>
-              {/* <!-- Dropdown menu --> */}
-              <div
-                className="hidden z-50 my-4 w-56 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600 rounded-xl"
-                id="dropdown"
-              >
-                <div className="py-3 px-4">
-                  <span className="block text-sm font-semibold text-gray-900 dark:text-white">
-                    Neil Sims
-                  </span>
-                  <span className="block text-sm text-gray-900 truncate dark:text-white">
-                    name@flowbite.com
-                  </span>
-                </div>
-                <ul
-                  className="py-1 text-gray-700 dark:text-gray-300"
-                  aria-labelledby="dropdown"
+              {/* Profile Dropdown Button */}
+              <div className="relative">
+                <button
+                  type="button"
+                  className="flex mx-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+                  id="user-menu-button"
+                  aria-expanded={isDropdownOpen}
+                  onClick={toggleDropdown}
                 >
-                  <li>
-                    <Link
-                      to={"#"}
-                      className="block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    >
-                      Sign out
-                    </Link>
-                  </li>
-                </ul>
+                  <span className="sr-only">Open user menu</span>
+                  <img
+                    className="w-8 h-8 rounded-full"
+                    src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gough.png"
+                    alt="user photo"
+                  />
+                </button>
+
+                {/* Dropdown menu */}
+                <div
+                  className={`${
+                    isDropdownOpen ? "block" : "hidden"
+                  } absolute right-0 z-50 my-4 w-56 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600 rounded-xl`}
+                  id="dropdown"
+                >
+                  <div className="py-3 px-4">
+                    <span className="block text-sm font-semibold text-gray-900 dark:text-white">
+                      {userInfo.name}
+                    </span>
+                    <span className="block text-sm text-gray-900 truncate dark:text-white">
+                      {userInfo.email}
+                    </span>
+                  </div>
+                  <ul
+                    className="py-1 text-gray-700 dark:text-gray-300"
+                    aria-labelledby="dropdown"
+                  >
+                    <li>
+                      <button
+                        type="button"
+                        className="block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white w-full text-left"
+                        onClick={handleLogout}
+                      >
+                        Sign out
+                      </button>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
         </nav>
 
-        {/* <!-- Sidebar --> */}
-
+        {/* Sidebar */}
         <aside
-          className="fixed top-0 left-0 z-40 w-64 h-screen pt-14 transition-transform -translate-x-full bg-white border-r border-gray-200 md:translate-x-0 dark:bg-gray-800 dark:border-gray-700"
+          className={`fixed top-0 left-0 z-40 w-64 h-screen pt-14 transition-transform ${
+            isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+          } bg-white border-r border-gray-200 md:translate-x-0 dark:bg-gray-800 dark:border-gray-700`}
           aria-label="Sidenav"
           id="drawer-navigation"
         >
@@ -218,8 +263,7 @@ export default function AdminLayout() {
               </li>
             </ul>
 
-            {/* sebelumnya pt-5 mt-5 */}
-            <ul className="pt-3 space-y-2 borderT border-gray-200 dark:border-gray-700">
+            <ul className="pt-3 space-y-2 border-t border-gray-200 dark:border-gray-700">
               <li>
                 <Link
                   to="/admin/books"
