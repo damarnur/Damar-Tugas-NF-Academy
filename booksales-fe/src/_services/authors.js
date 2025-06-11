@@ -1,4 +1,5 @@
 import { API } from "../_api";
+import { getToken } from "./token";
 
 export const getAuthors = async () => {
   const { data } = await API.get("/authors");
@@ -7,7 +8,11 @@ export const getAuthors = async () => {
 
 export const createAuthor = async (data) => {
   try {
-    const response = await API.post("/authors", data);
+    const response = await API.post("/authors", data, {
+      headers: {
+        Authorization: `Bearer ${getToken()}`,
+      },
+    });
     return response.data;
   } catch (error) {
     console.log(error);
@@ -27,7 +32,11 @@ export const showAuthor = async (id) => {
 
 export const updateAuthor = async (id, payload) => {
   try {
-    const response = await API.post(`/authors/${id}`, payload);
+    const response = await API.post(`/authors/${id}`, payload, {
+      headers: {
+        Authorization: `Bearer ${getToken()}`,
+      },
+    });
     return response.data;
   } catch (error) {
     console.log(error);
@@ -37,7 +46,11 @@ export const updateAuthor = async (id, payload) => {
 
 export const deleteAuthor = async (id) => {
   try {
-    await API.delete(`/authors/${id}`);
+    await API.delete(`/authors/${id}`, {
+      headers: {
+        Authorization: `Bearer ${getToken()}`,
+      },
+    });
   } catch (error) {
     console.log(error);
     throw error;

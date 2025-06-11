@@ -1,4 +1,5 @@
 import { API } from "../_api";
+import { getToken } from "./token";
 
 export const getGenres = async () => {
   const { data } = await API.get("/genres");
@@ -7,7 +8,11 @@ export const getGenres = async () => {
 
 export const createGenre = async (data) => {
   try {
-    const response = await API.post("/genres", data);
+    const response = await API.post("/genres", data, {
+      headers: {
+        Authorization: `Bearer ${getToken()}`,
+      },
+    });
     return response.data;
   } catch (error) {
     console.log(error);
@@ -27,7 +32,11 @@ export const showGenre = async (id) => {
 
 export const updateGenre = async (id, payload) => {
   try {
-    const response = await API.post(`/genres/${id}`, payload);
+    const response = await API.post(`/genres/${id}`, payload, {
+      headers: {
+        Authorization: `Bearer ${getToken()}`,
+      },
+    });
     return response.data;
   } catch (error) {
     console.log(error);
@@ -37,7 +46,11 @@ export const updateGenre = async (id, payload) => {
 
 export const deleteGenre = async (id) => {
   try {
-    await API.delete(`/genres/${id}`);
+    await API.delete(`/genres/${id}`, {
+      headers: {
+        Authorization: `Bearer ${getToken()}`,
+      },
+    });
   } catch (error) {
     console.log(error);
     throw error;

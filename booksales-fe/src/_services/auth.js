@@ -1,6 +1,6 @@
 import { useJwt } from "react-jwt";
 import { API } from "../_api";
-// import jwt_decode from "jwt-decode";
+import { getToken } from "./token";
 
 export const login = async ({ email, password }) => {
   try {
@@ -29,7 +29,7 @@ export const logout = async ({ token, user }) => {
       { token, user },
       {
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          Authorization: `Bearer ${getToken()}`,
         },
       }
     );
