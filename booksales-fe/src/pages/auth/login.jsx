@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { login, useDecodeToken } from "../../_services/auth";
-// import { decodeToken } from "react-jwt";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -64,8 +63,6 @@ export default function Login() {
       setLoading(false);
     }
   };
-
-  console.log("ini decode data", decodedData);
 
   useEffect(() => {
     if (token && decodedData && decodedData.success) {

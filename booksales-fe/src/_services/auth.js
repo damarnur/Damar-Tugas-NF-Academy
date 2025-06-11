@@ -12,6 +12,16 @@ export const login = async ({ email, password }) => {
   }
 };
 
+export const register = async ({ name, email, password }) => {
+  try {
+    const { data } = await API.post("/register", { name, email, password });
+    return data;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+};
+
 export const logout = async ({ token, user }) => {
   try {
     const { data } = await API.post(
